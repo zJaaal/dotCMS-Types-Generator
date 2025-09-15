@@ -28,7 +28,9 @@ cd dotCMS-Types-Generator
 npm install
 
 # Build the project
-npm run build
+npm run build (Windows)
+
+npm run build:unix (Linux/Unix)
 ```
 
 After building, the CLI tool will be available at `./dist/bin/types-gen.js`

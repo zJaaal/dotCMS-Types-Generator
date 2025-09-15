@@ -11,7 +11,8 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --bundleConfigAsCjs; cd dist && chmod +x bin/types-gen.js"
+        "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --bundleConfigAsCjs",
+        "build:unix": "npm run build && chmod +x dist/bin/types-gen.js"
     },
     "keywords": [
         "types",
