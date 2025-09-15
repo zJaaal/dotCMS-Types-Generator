@@ -1,0 +1,49 @@
+{
+    "name": "gen-dotcms-types",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Generate types for dotCMS",
+    "main": "./gen-types.cjs",
+    "module": "./gen-types.mjs",
+    "types": "./gen-types.d.ts",
+    "bin": {
+        "dot-types": "./dist/bin/types-gen.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --bundleConfigAsCjs; cd dist && chmod +x bin/types-gen.js"
+    },
+    "keywords": [
+        "types",
+        "dotCMS"
+    ],
+    "author": "Jalinson Diaz",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./gen-types.d.ts",
+            "import": "./gen-types.mjs",
+            "require": "./gen-types.cjs",
+            "default": "./gen-types.mjs"
+        }
+    },
+    "typesVersions": {
+        "*": {
+            ".": [
+                "./gen-types.d.ts"
+            ]
+        }
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^12.1.2",
+        "@types/node": "^22.13.10",
+        "rimraf": "^6.0.1",
+        "rollup": "^4.35.0",
+        "rollup-plugin-copy": "^3.5.0",
+        "tslib": "^2.8.1",
+        "typescript": "^5.7.3"
+    },
+    "dependencies": {
+        "@dotcms/types": "^1.0.6"
+    }
+}
